@@ -11,13 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class TestController {
     private final TestService service;
-
-    @Autowired
-    public TestController(TestService service) {
-        this.service = service;
-    }
 
     @GetMapping("/hello")
     public ResponseEntity<String> hello(@RequestParam String username){
